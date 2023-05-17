@@ -1,0 +1,89 @@
+---
+
+- namespace: glyd::examples::namespace_one
+  messages:
+    - name: MyFirstMsg
+      fields:
+        - name: first_field   # Bytes 0-3
+          type: uint32_t
+          big_endian: true    # Defaults to false (little-endian)
+
+        - name: second_field  # Bytes 4-7
+          type: float
+
+        - name: third_field   # Byte 8
+          type:
+            enum:
+              name: ThirdFieldEnum
+              underlying_type: uint8_t  # Defaults to int
+              values:
+                - name: FirstValueName
+                  value: 0
+                - name: SecondValueName
+                  value: 1
+                - name: ThirdValueName
+                  value: 2
+          big_endian: true
+
+    - name: MySecondMsg
+      fields:
+        - name: first_field
+          type: uint32_t
+
+        - name: second_field
+          type: float
+
+        - name: third_field
+          type:
+            enum:
+              name: ThirdFieldEnum
+              values:
+                - name: FirstValueName
+                  value: 0
+                - name: SecondValueName
+                  value: 1
+          big_endian: true
+
+- namespace: glyd::examples::namespace_two
+  messages:
+    - name: MyFirstMsg
+      fields:
+        - name: first_field   # Bytes 0-3
+          type: uint32_t
+          big_endian: true    # Defaults to false (little-endian)
+
+        - name: second_field  # Bytes 4-7
+          type: float
+
+        - name: third_field   # Byte 8
+          type:
+            enum:
+              name: ThirdFieldEnum
+              underlying_type: uint8_t  # Defaults to int
+              values:
+                - name: FirstValueName
+                  value: 0
+                - name: SecondValueName
+                  value: 1
+                - name: ThirdValueName
+                  value: 2
+          big_endian: true
+
+    - name: MySecondMsg
+      fields:
+        - name: first_field
+          type: uint32_t
+
+        - name: second_field
+          type: float
+
+        - name: third_field
+          type:
+            enum:
+              name: ThirdFieldEnum
+              values:
+                - name: FirstValueName
+                  value: 0
+                - name: SecondValueName
+                  value: 1
+          big_endian: true
