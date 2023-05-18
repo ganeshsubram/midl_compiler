@@ -1,93 +1,49 @@
 ---
 
-- namespace: examples::namespace_one
+- namespace: examples::messages
   messages:
-    - name: MyFirstMsg
-      description: MyFirstMsg is a cool message.
+    - name: ExampleMsg
+      description: This is an example message in examples::messages.
       fields:
-        - name: first_field   # Bytes 0-3
-          description: This is the first field of MyFirstMsg message.
+        - name: first_field   
           type: uint32_t
-          big_endian: true    # Defaults to false (little-endian)
-
-        - name: second_field  # Bytes 4-7
-          type: float
+          description: This is the first field of ExampleMsg
+          # big_endian: false
 
         - name: third_field   # Byte 8
-          big_endian: true
           type: enum
+          description: This is the third_field description.
           enum:
               name: ThirdFieldEnum
-              description: This is the Enum description
-              underlying_type: uint8_t  # Defaults to int
+              description: This is the ThirdFieldEnum description
+              # underlying_type: int
               values:
                 - name: FirstValueName
                   description: This is the FirstValueName description
                   value: 0
                 - name: SecondValueName
                   value: 1
+                  # description: 
                 - name: ThirdValueName
                   value: 2
+                  # description: 
 
-    - name: MySecondMsg
+    - name: Example2Msg
       fields:
         - name: first_field
-          type: uint32_t
-
+          type: uint8_t
         - name: second_field
-          type: float
-
+          type: int64_t
         - name: third_field
           type: float
-            # enum:
-            #   name: ThirdFieldEnum
-            #   values:
-            #     - name: FirstValueName
-            #       value: 0
-            #     - name: SecondValueName
-            #       value: 1
-          big_endian: true
 
-- namespace: examples::namespace_two
+- namespace: examples::different::messages
   messages:
-    - name: MyFirstMsg
-      fields:
-        - name: first_field   # Bytes 0-3
-          type: uint32_t
-          big_endian: true    # Defaults to false (little-endian)
-
-        - name: second_field  # Bytes 4-7
-          type: float
-
-        - name: third_field   # Byte 8
-          type: int32_t
-            # enum:
-            #   name: ThirdFieldEnum
-            #   underlying_type: uint8_t  # Defaults to int
-            #   values:
-            #     - name: FirstValueName
-            #       value: 0
-            #     - name: SecondValueName
-            #       value: 1
-            #     - name: ThirdValueName
-            #       value: 2
-          big_endian: true
-
-    - name: MySecondMsg
+    - name: ExampleMsg
       fields:
         - name: first_field
           type: uint32_t
-
         - name: second_field
-          type: float
-
+          type: uint16_t
         - name: third_field
-          type: double
-            # enum:
-            #   name: ThirdFieldEnum
-            #   values:
-            #     - name: FirstValueName
-            #       value: 0
-            #     - name: SecondValueName
-            #       value: 1
-          big_endian: true
+          type: int8_t

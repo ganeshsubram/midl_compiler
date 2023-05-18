@@ -3,16 +3,16 @@
 
 #include <cstdint>
 
-namespace glyd::examples::namespace_one {
+namespace examples::messages {
 
 #pragma pack(push, 1)
 ///
-/// @brief MyFirstMsg is a cool message.
+/// @brief This is a test message in examples::messages.
 ///
-struct MyFirstMsg {
+struct ExampleMsg {
 
     ///
-    /// @brief This is the first field of MyFirstMsg message.
+    /// @brief This is the first field of ExampleMsg
     ///
     std::uint32_t first_field;
 
@@ -20,63 +20,32 @@ struct MyFirstMsg {
     /// @brief Returns the value of first_field (std::uint32_t).
     ///
     std::uint32_t get_first_field() const {
-        return __builtin_bswap32(first_field);
+        return first_field;
     }
     ///
     /// @brief Returns the value of first_field (std::uint32_t) in Big Endian.
     ///
     std::uint32_t get_first_field_big_endian() const {
-        return first_field;
+        return __builtin_bswap32(first_field);
     }
     ///
     /// @brief Returns the value of first_field (std::uint32_t) in Little Endian.
     ///
     std::uint32_t get_first_field_little_endian() const {
-        return __builtin_bswap32(first_field);
+        return first_field;
     }
 
     ///
-    /// @brief Returns the value of the packed size of MyFirstMsg in bytes.
+    /// @brief Returns the value of the packed size of ExampleMsg in bytes.
     ///
     static constexpr std::size_t size() {
-        return sizeof(MyFirstMsg);
+        return sizeof(ExampleMsg);
     }
 
     ///
-    /// @brief second_field (float)
+    /// @brief This is the ThirdFieldEnum description
     ///
-    float second_field;
-
-    ///
-    /// @brief Returns the value of second_field (float).
-    ///
-    float get_second_field() const {
-        return second_field;
-    }
-    ///
-    /// @brief Returns the value of second_field (float) in Big Endian.
-    ///
-    float get_second_field_big_endian() const {
-        return __builtin_bswap32(second_field);
-    }
-    ///
-    /// @brief Returns the value of second_field (float) in Little Endian.
-    ///
-    float get_second_field_little_endian() const {
-        return second_field;
-    }
-
-    ///
-    /// @brief Returns the value of the packed size of MyFirstMsg in bytes.
-    ///
-    static constexpr std::size_t size() {
-        return sizeof(MyFirstMsg);
-    }
-
-    ///
-    /// @brief This is the Enum description
-    ///
-    enum ThirdFieldEnum : std::uint8_t {
+    enum ThirdFieldEnum : int {
 
         /// @brief This is the FirstValueName description
         FirstValueName = 0,
@@ -88,102 +57,102 @@ struct MyFirstMsg {
         ThirdValueName = 2,
     };
     ///
-    /// @brief third_field (enum)
+    /// @brief This is the third_field description.
     ///
     enum third_field;
     ///
     /// @brief Returns the value of third_field (enum).
     ///
     ThirdFieldEnum get_third_field() const {
-        return static_cast<ThirdFieldEnum>(__builtin_bswap32(static_cast<uint32_t>(third_field)));
+        return third_field;
     ///
     /// @brief Returns the value of third_field (enum) in Big Endian.
     ///
     ThirdFieldEnum get_third_field_big_endian() const {
-        return third_field;
+        return static_cast<ThirdFieldEnum>(__builtin_bswap32(static_cast<uint32_t>(third_field)));
     }
     ///
     /// @brief Returns the value of third_field (enum) in Little Endian.
     ///
     ThirdFieldEnum get_third_field_little_endian() const {
-        return static_cast<ThirdFieldEnum>(__builtin_bswap32(static_cast<uint32_t>(third_field)));
+        return third_field;
     }
 
     ///
-    /// @brief Returns the value of the packed size of MyFirstMsg in bytes.
+    /// @brief Returns the value of the packed size of ExampleMsg in bytes.
     ///
     static constexpr std::size_t size() {
-        return sizeof(MyFirstMsg);
+        return sizeof(ExampleMsg);
     }
 };
 #pragma pack(pop)
 
 #pragma pack(push, 1)
 ///
-/// @brief MySecondMsg
+/// @brief Example2Msg
 ///
-struct MySecondMsg {
+struct Example2Msg {
 
     ///
-    /// @brief first_field (uint32_t)
+    /// @brief first_field (uint8_t)
     ///
-    std::uint32_t first_field;
+    std::uint8_t first_field;
 
     ///
-    /// @brief Returns the value of first_field (std::uint32_t).
+    /// @brief Returns the value of first_field (std::uint8_t).
     ///
-    std::uint32_t get_first_field() const {
+    std::uint8_t get_first_field() const {
         return first_field;
     }
     ///
-    /// @brief Returns the value of first_field (std::uint32_t) in Big Endian.
+    /// @brief Returns the value of first_field (std::uint8_t) in Big Endian.
     ///
-    std::uint32_t get_first_field_big_endian() const {
+    std::uint8_t get_first_field_big_endian() const {
         return __builtin_bswap32(first_field);
     }
     ///
-    /// @brief Returns the value of first_field (std::uint32_t) in Little Endian.
+    /// @brief Returns the value of first_field (std::uint8_t) in Little Endian.
     ///
-    std::uint32_t get_first_field_little_endian() const {
+    std::uint8_t get_first_field_little_endian() const {
         return first_field;
     }
 
     ///
-    /// @brief Returns the value of the packed size of MySecondMsg in bytes.
+    /// @brief Returns the value of the packed size of Example2Msg in bytes.
     ///
     static constexpr std::size_t size() {
-        return sizeof(MySecondMsg);
+        return sizeof(Example2Msg);
     }
 
     ///
-    /// @brief second_field (float)
+    /// @brief second_field (int64_t)
     ///
-    float second_field;
+    std::int64_t second_field;
 
     ///
-    /// @brief Returns the value of second_field (float).
+    /// @brief Returns the value of second_field (std::int64_t).
     ///
-    float get_second_field() const {
+    std::int64_t get_second_field() const {
         return second_field;
     }
     ///
-    /// @brief Returns the value of second_field (float) in Big Endian.
+    /// @brief Returns the value of second_field (std::int64_t) in Big Endian.
     ///
-    float get_second_field_big_endian() const {
+    std::int64_t get_second_field_big_endian() const {
         return __builtin_bswap32(second_field);
     }
     ///
-    /// @brief Returns the value of second_field (float) in Little Endian.
+    /// @brief Returns the value of second_field (std::int64_t) in Little Endian.
     ///
-    float get_second_field_little_endian() const {
+    std::int64_t get_second_field_little_endian() const {
         return second_field;
     }
 
     ///
-    /// @brief Returns the value of the packed size of MySecondMsg in bytes.
+    /// @brief Returns the value of the packed size of Example2Msg in bytes.
     ///
     static constexpr std::size_t size() {
-        return sizeof(MySecondMsg);
+        return sizeof(Example2Msg);
     }
 
     ///
@@ -195,140 +164,39 @@ struct MySecondMsg {
     /// @brief Returns the value of third_field (float).
     ///
     float get_third_field() const {
-        return __builtin_bswap32(third_field);
+        return third_field;
     }
     ///
     /// @brief Returns the value of third_field (float) in Big Endian.
     ///
     float get_third_field_big_endian() const {
-        return third_field;
+        return __builtin_bswap32(third_field);
     }
     ///
     /// @brief Returns the value of third_field (float) in Little Endian.
     ///
     float get_third_field_little_endian() const {
-        return __builtin_bswap32(third_field);
-    }
-
-    ///
-    /// @brief Returns the value of the packed size of MySecondMsg in bytes.
-    ///
-    static constexpr std::size_t size() {
-        return sizeof(MySecondMsg);
-    }
-};
-#pragma pack(pop)
-
-}  // namespace glyd::examples::namespace_one
-
-namespace glyd::examples::namespace_two {
-
-#pragma pack(push, 1)
-///
-/// @brief MyFirstMsg
-///
-struct MyFirstMsg {
-
-    ///
-    /// @brief first_field (uint32_t)
-    ///
-    std::uint32_t first_field;
-
-    ///
-    /// @brief Returns the value of first_field (std::uint32_t).
-    ///
-    std::uint32_t get_first_field() const {
-        return __builtin_bswap32(first_field);
-    }
-    ///
-    /// @brief Returns the value of first_field (std::uint32_t) in Big Endian.
-    ///
-    std::uint32_t get_first_field_big_endian() const {
-        return first_field;
-    }
-    ///
-    /// @brief Returns the value of first_field (std::uint32_t) in Little Endian.
-    ///
-    std::uint32_t get_first_field_little_endian() const {
-        return __builtin_bswap32(first_field);
-    }
-
-    ///
-    /// @brief Returns the value of the packed size of MyFirstMsg in bytes.
-    ///
-    static constexpr std::size_t size() {
-        return sizeof(MyFirstMsg);
-    }
-
-    ///
-    /// @brief second_field (float)
-    ///
-    float second_field;
-
-    ///
-    /// @brief Returns the value of second_field (float).
-    ///
-    float get_second_field() const {
-        return second_field;
-    }
-    ///
-    /// @brief Returns the value of second_field (float) in Big Endian.
-    ///
-    float get_second_field_big_endian() const {
-        return __builtin_bswap32(second_field);
-    }
-    ///
-    /// @brief Returns the value of second_field (float) in Little Endian.
-    ///
-    float get_second_field_little_endian() const {
-        return second_field;
-    }
-
-    ///
-    /// @brief Returns the value of the packed size of MyFirstMsg in bytes.
-    ///
-    static constexpr std::size_t size() {
-        return sizeof(MyFirstMsg);
-    }
-
-    ///
-    /// @brief third_field (int32_t)
-    ///
-    std::int32_t third_field;
-
-    ///
-    /// @brief Returns the value of third_field (std::int32_t).
-    ///
-    std::int32_t get_third_field() const {
-        return __builtin_bswap32(third_field);
-    }
-    ///
-    /// @brief Returns the value of third_field (std::int32_t) in Big Endian.
-    ///
-    std::int32_t get_third_field_big_endian() const {
         return third_field;
     }
-    ///
-    /// @brief Returns the value of third_field (std::int32_t) in Little Endian.
-    ///
-    std::int32_t get_third_field_little_endian() const {
-        return __builtin_bswap32(third_field);
-    }
 
     ///
-    /// @brief Returns the value of the packed size of MyFirstMsg in bytes.
+    /// @brief Returns the value of the packed size of Example2Msg in bytes.
     ///
     static constexpr std::size_t size() {
-        return sizeof(MyFirstMsg);
+        return sizeof(Example2Msg);
     }
 };
 #pragma pack(pop)
 
+}  // namespace examples::messages
+
+namespace examples::different::messages {
+
 #pragma pack(push, 1)
 ///
-/// @brief MySecondMsg
+/// @brief ExampleMsg
 ///
-struct MySecondMsg {
+struct ExampleMsg {
 
     ///
     /// @brief first_field (uint32_t)
@@ -355,75 +223,75 @@ struct MySecondMsg {
     }
 
     ///
-    /// @brief Returns the value of the packed size of MySecondMsg in bytes.
+    /// @brief Returns the value of the packed size of ExampleMsg in bytes.
     ///
     static constexpr std::size_t size() {
-        return sizeof(MySecondMsg);
+        return sizeof(ExampleMsg);
     }
 
     ///
-    /// @brief second_field (float)
+    /// @brief second_field (uint16_t)
     ///
-    float second_field;
+    std::uint16_t second_field;
 
     ///
-    /// @brief Returns the value of second_field (float).
+    /// @brief Returns the value of second_field (std::uint16_t).
     ///
-    float get_second_field() const {
+    std::uint16_t get_second_field() const {
         return second_field;
     }
     ///
-    /// @brief Returns the value of second_field (float) in Big Endian.
+    /// @brief Returns the value of second_field (std::uint16_t) in Big Endian.
     ///
-    float get_second_field_big_endian() const {
+    std::uint16_t get_second_field_big_endian() const {
         return __builtin_bswap32(second_field);
     }
     ///
-    /// @brief Returns the value of second_field (float) in Little Endian.
+    /// @brief Returns the value of second_field (std::uint16_t) in Little Endian.
     ///
-    float get_second_field_little_endian() const {
+    std::uint16_t get_second_field_little_endian() const {
         return second_field;
     }
 
     ///
-    /// @brief Returns the value of the packed size of MySecondMsg in bytes.
+    /// @brief Returns the value of the packed size of ExampleMsg in bytes.
     ///
     static constexpr std::size_t size() {
-        return sizeof(MySecondMsg);
+        return sizeof(ExampleMsg);
     }
 
     ///
-    /// @brief third_field (double)
+    /// @brief third_field (int8_t)
     ///
-    double third_field;
+    std::int8_t third_field;
 
     ///
-    /// @brief Returns the value of third_field (double).
+    /// @brief Returns the value of third_field (std::int8_t).
     ///
-    double get_third_field() const {
-        return __builtin_bswap32(third_field);
-    }
-    ///
-    /// @brief Returns the value of third_field (double) in Big Endian.
-    ///
-    double get_third_field_big_endian() const {
+    std::int8_t get_third_field() const {
         return third_field;
     }
     ///
-    /// @brief Returns the value of third_field (double) in Little Endian.
+    /// @brief Returns the value of third_field (std::int8_t) in Big Endian.
     ///
-    double get_third_field_little_endian() const {
+    std::int8_t get_third_field_big_endian() const {
         return __builtin_bswap32(third_field);
+    }
+    ///
+    /// @brief Returns the value of third_field (std::int8_t) in Little Endian.
+    ///
+    std::int8_t get_third_field_little_endian() const {
+        return third_field;
     }
 
     ///
-    /// @brief Returns the value of the packed size of MySecondMsg in bytes.
+    /// @brief Returns the value of the packed size of ExampleMsg in bytes.
     ///
     static constexpr std::size_t size() {
-        return sizeof(MySecondMsg);
+        return sizeof(ExampleMsg);
     }
 };
 #pragma pack(pop)
 
-}  // namespace glyd::examples::namespace_two
+}  // namespace examples::different::messages
 
